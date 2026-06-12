@@ -4,10 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Message</title>
+    <link rel="stylesheet" type="text/css" href="/messagedetails.css" />
   </head>
   <body>
-    <p><%=date%></p>
-    <h4><%= username%></h4>
-    <p><%= message%></p>
+    <div>
+      <p>Date: <%=date%></p>
+      <h4>User: <%= username%></h4>
+      <p>Message: <%= message%></p>
+      <a href="/">Go back</a>
+    </div>
   </body>
 </html>
