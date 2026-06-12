@@ -134,13 +134,18 @@ article form button[type="submit"] {
   transition:
     border-color var(--transition),
     color var(--transition),
-    background var(--transition);
+    background var(--transition),
+    transform 0.2s ease-in-out;
 }
 
 article form button[type="submit"]:hover {
   border-color: var(--accent);
   color: var(--accent);
-  background: var(--accent-glow);
+  background: white;
+}
+
+article form button[type="submit"]:focus {
+  transform: translate(0px, 2px);
 }
 
 main > button[commandfor="newMessage"] {

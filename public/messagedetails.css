@@ -37,8 +37,12 @@ div {
 }
 p,
 h4 {
+  letter-spacing: 1px;
+  line-height: 1.5px;
   width: 100%;
   text-align: start;
+  border-bottom: 2px solid var(--accent-glow);
+  padding: 2rem;
 }
 /* ── Base ───────────────────────────────────────────────── */
 body {
