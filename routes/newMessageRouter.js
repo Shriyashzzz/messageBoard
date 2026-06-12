@@ -1,16 +1,7 @@
 import { response, Router } from "express";
-import messages from "../models/messages_db.js";
-
+import newMessageController from "../controllers/newMessageController.js";
 const newMessageRouter = Router();
 
-newMessageRouter.post("/", (request, response) => {
-  messages.push({
-    text: request.body.textMessage,
-    user: request.body.userName,
-    added: new Date(),
-  });
-
-  response.redirect("/");
-});
+newMessageRouter.post("/", newMessageController.addNewMessage);
 
 export default newMessageRouter;
