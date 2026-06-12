@@ -1,20 +1,8 @@
 import { Router } from "express";
-
+import messages from "../models/messages_db.js";
 const homeRouter = Router();
-const messages = [
-  {
-    text: "Hi there!",
-    user: "Amando",
-    added: new Date(),
-  },
-  {
-    text: "Hello World!",
-    user: "Charles",
-    added: new Date(),
-  },
-];
 
 homeRouter.get("/", (request, response) => {
-  response.render("index", { messages: messages });
+  response.render("index", { title: "Mini Message Board", messages: messages });
 });
 export default homeRouter;

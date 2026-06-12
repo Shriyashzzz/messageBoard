@@ -6,9 +6,41 @@
     <title>Document</title>
   </head>
   <body>
-     <% messages.forEach((message)=>{ %>
-        <%- include('message', {message:message}); %>
-     <% }); %>
 
+    <article>
+       <h1><%= title %></h1>
+      <% messages.forEach((message, index)=>{ %>
+        <%- include('message', {message:message}); %>
+        <form action="/message/<%= index %>" method="POST" style="display:inline;">
+          <button type="submit">Show More</button>
+        </form>
+      <% }); %>    
+    </article>
+   
+
+    <button command = "show-modal" commandfor = "newMessage">
+      New Message
+    </button>
+    <dialog id = "newMessage">
+      
+      <form method="POST" action="/new">
+        <div>
+          <label for="userName">user</label>
+          <input type="text" name = "userName" id = "userName">
+        </div>
+        <div>
+          <label for="textMessage">Message</label>
+          <input type="text" name = "textMessage" id = "textMessage">
+        </div>
+      <div>
+        <button type="submit">Send</button>
+        <button type = "button" command = "close" commandfor = "newMessage">Close</button>
+      </div>
+    
+    </form> 
+
+
+    </dialog>
+   
   </body>
 </html>
