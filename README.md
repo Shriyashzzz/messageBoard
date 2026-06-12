@@ -83,4 +83,4 @@ All CSS files live in `public/` and are served statically by Express. Each page 
 | `message.css`        | `views/message.ejs` (partial) |
 | `message-detail.css` | `views/message-detail.ejs`    |
 
-Made with <3 while going through the NodeJs section of The Odin Project
+**Made with <3 while going through the NodeJs section of The Odin Project**
