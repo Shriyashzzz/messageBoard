@@ -300,6 +300,10 @@ dialog button[type="button"]:hover {
   article {
     flex-direction: column;
     gap: 0.75rem;
+    p {
+      width: 100%;
+      overflow-wrap: anywhere;
+    }
   }
   dialog {
     padding: 1.5rem;
