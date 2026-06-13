@@ -4,7 +4,7 @@ const addNewMessage = (request, response) => {
   messages.push({
     text: request.body.textMessage,
     user: request.body.userName || "Anonymous",
-    added: new Date(),
+    added: `${new Date().toDateString()} || ${new Date().toLocaleTimeString()}`,
   });
 
   response.redirect("/");

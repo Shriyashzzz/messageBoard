@@ -2,7 +2,7 @@ const messages = [
   {
     text: "Hi! Nice to meet you!",
     user: "Amando",
-    added: new Date(),
+    added: `${new Date().toDateString()} || ${new Date().toLocaleTimeString()}`,
   },
   {
     text: "Hello Amando!",
