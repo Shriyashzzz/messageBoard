@@ -17,22 +17,9 @@ const SQL = `
 
 async function main() {
   console.log("seeding...");
-  console.log(`given connection path: ${argv[2]}`);
-  // Step 1: connect to postgres to create the database
-  const initClient = new Client({
-    connectionString: argv[2],
-  });
-  await initClient.connect();
-  try {
-    //create the database if it does not exist
-    await initClient.query(`CREATE DATABASE messages`);
-  } catch (e) {
-    console.log(e.message);
-  }
-  await initClient.end();
   //connect to the new database
   const client = new Client({
-    connectionString: argv[3],
+    connectionString: argv[2],
   });
   await client.connect();
   await client.query(SQL);

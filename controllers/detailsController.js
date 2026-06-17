@@ -1,11 +1,13 @@
-import messages from "../models/messages_db.js";
-
-const getMessageDetails = (req, res) => {
-  const data = messages[parseInt(req.params.messageId)];
+import { queryMessageFormId } from "../models/queries.js";
+const getMessageDetails = async (req, res) => {
+  const retrievedMessage = await queryMessageFormId([
+    parseInt(req.params.messageId),
+  ]);
+  console.log(retrievedMessage);
   res.render("messagedetails", {
-    message: data.text,
-    username: data.user,
-    date: data.added,
+    message: retrievedMessage.text,
+    username: retrievedMessage.user_name,
+    date: retrievedMessage.added,
   });
 };
 

@@ -16,7 +16,7 @@
         <% messages.forEach((message, index)=>{ %>
            <article>
             <%- include('message', {message:message}); %>
-            <form action="/message/<%= index %>" method="POST" style="display:inline;">
+            <form action="/message/<%= index+1 %>" method="POST" style="display:inline;">
               <button type="submit">Show More</button>
             </form>
            </article>

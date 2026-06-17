@@ -1,12 +1,13 @@
-import messages from "../models/messages_db.js";
+import { addMessagetoDb } from "../models/queries.js";
 
-const addNewMessage = (request, response) => {
-  messages.push({
-    text: request.body.textMessage,
-    user: request.body.userName || "Anonymous",
-    added: `${new Date().toDateString()} || ${new Date().toLocaleTimeString()}`,
-  });
-
+const addNewMessage = async (request, response) => {
+  //add validation later
+  const newMessage = [
+    request.body.userName || "Anonymous",
+    request.body.textMessage,
+    `${new Date().toDateString()} || ${new Date().toLocaleTimeString()}`,
+  ];
+  await addMessagetoDb(newMessage);
   response.redirect("/");
 };
 
