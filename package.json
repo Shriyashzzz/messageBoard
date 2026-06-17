@@ -4,7 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node --watch --env-file=.env app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "initdb": "node models/db/initdb.js postgresql://shriyashzzz:@localhost:5432/postgres postgresql://shriyashzzz:@localhost:5432/messages"
   },
   "keywords": [],
   "author": "",
@@ -12,6 +14,7 @@
   "type": "module",
   "dependencies": {
     "ejs": "^6.0.1",
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "pg": "^8.21.0"
   }
 }
