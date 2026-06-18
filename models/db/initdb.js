@@ -1,6 +1,5 @@
 import { Client } from "pg";
-import { argv } from "node:process";
-import { env } from "node:process";
+import process from "node:process";
 const now = `${new Date().toDateString()} ${new Date().toLocaleTimeString()}`;
 
 const SQL = `
