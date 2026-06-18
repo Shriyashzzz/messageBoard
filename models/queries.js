@@ -6,13 +6,14 @@ export async function getMessages() {
 }
 
 export async function addMessagetoDb(givenMessage) {
-  pool.query(
+  await pool.query(
     `INSERT INTO messages (user_name, text, added) VALUES ($1,$2, $3)`,
     givenMessage,
   );
 }
 
 export async function queryMessageFormId(givenId) {
+  console.log(givenId);
   const message = await pool.query(
     `SELECT * FROM messages WHERE  messages.id = $1`,
     givenId,

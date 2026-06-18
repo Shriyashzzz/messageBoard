@@ -7,7 +7,7 @@ const SQL = `
     CREATE TABLE IF NOT EXISTS messages (
         id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
         user_name VARCHAR(30) NOT NULL,
-        text VARCHAR(50) NOT NULL,
+        text VARCHAR(180) NOT NULL,
         added VARCHAR(50) NOT NULL
     );
 
@@ -26,5 +26,4 @@ async function main() {
   await client.end();
   console.log("done");
 }
-
 main();

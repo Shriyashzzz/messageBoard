@@ -28,11 +28,11 @@
         <form method="POST" action="/new">
           <div>
             <label for="userName">user</label>
-            <input type="text" name = "userName" id = "userName" value <%= formData.userName || '' %>>
+            <input type="text" name = "userName" id = "userName" value =  "<%= formData.userName || '' %>" >
           </div>
           <div>
             <label for="textMessage">Message</label>
-            <input type="text" name = "textMessage" id = "textMessage" required value= <%= formData.textMessage ||'' %> >
+            <input type="text" name = "textMessage" id = "textMessage" required value= "<%= formData.textMessage ||'' %>" >
           </div>
           <div>
               <% if (errors.length !=0) { %>
