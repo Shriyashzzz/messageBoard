@@ -12,7 +12,6 @@
     </header>
 
     <main>
-     
         <% messages.forEach((message, index)=>{ %>
            <article>
             <%- include('message', {message:message}); %>
@@ -24,26 +23,40 @@
       <button command = "show-modal" commandfor = "newMessage">
         New Message
       </button>
-      <dialog id = "newMessage">
+      <dialog id = "newMessage" >
         
         <form method="POST" action="/new">
           <div>
             <label for="userName">user</label>
-            <input type="text" name = "userName" id = "userName" >
+            <input type="text" name = "userName" id = "userName" value <%= formData.userName || '' %>>
           </div>
           <div>
             <label for="textMessage">Message</label>
-            <input type="text" name = "textMessage" id = "textMessage" required >
+            <input type="text" name = "textMessage" id = "textMessage" required value= <%= formData.textMessage ||'' %> >
+          </div>
+          <div>
+              <% if (errors.length !=0) { %>
+                  <ul style = "list-style: none;">
+                    <% errors.map((error) =>{ %>
+                    <li style = "list-style: none;"> <%= error.msg %></li> 
+                    <% }) %>
+                  </ul>
+              <% } %>
           </div>
         <div>
-          <button type="submit">Send</button>
-          <button type = "button" command = "close" commandfor = "newMessage">Close</button>
+          <button type = "submit" >Send</button>
+          <button type = "button" command = 'close' commandfor = "newMessage">Close</button>
         </div>
       
       </form> 
 
 
       </dialog>
+      <% if (errors.length !== 0) { %>
+        <script>
+          document.getElementById("newMessage").showModal();
+        </script>
+      <% } %>
 
     </main>
    

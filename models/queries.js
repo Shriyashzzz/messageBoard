@@ -7,7 +7,7 @@ export async function getMessages() {
 
 export async function addMessagetoDb(givenMessage) {
   pool.query(
-    `INSERT INTO messages (user_name, text, date) VALUES ($1,$2, $3)`,
+    `INSERT INTO messages (user_name, text, added) VALUES ($1,$2, $3)`,
     givenMessage,
   );
 }

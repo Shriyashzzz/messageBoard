@@ -4,6 +4,11 @@ const getAllMessages = async (request, response) => {
   response.render("index", {
     title: "Mini Message Board",
     messages: message,
+    errors: [],
+    formData: {
+      name: "",
+      textMessage: "",
+    },
   });
 };
 
