@@ -4,9 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node --watch --env-file=.env app.js",
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "initdb": "node models/db/initdb.js postgresql://shriyashzzz:@localhost:5432/shriyashzzz"
+    "initdb": "node models/db/initdb.js"
   },
   "keywords": [],
   "author": "",
