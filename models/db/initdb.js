@@ -1,6 +1,6 @@
 import { Client } from "pg";
 import { argv } from "node:process";
-
+import { env } from "node:process";
 const now = `${new Date().toDateString()} ${new Date().toLocaleTimeString()}`;
 
 const SQL = `
@@ -19,7 +19,7 @@ async function main() {
   console.log("seeding...");
   //connect to the new database
   const client = new Client({
-    connectionString: argv[2],
+    connectionString: process.env.DATABASE_URL,
   });
   await client.connect();
   await client.query(SQL);
