@@ -27,7 +27,7 @@ npm install
 
 **2. Insitialize Database**
 
-- **Make sure to initialize a Postgres databse" **
+- **Make sure to initialize a Postgres databse"**
 
 ```bash
 npm run initdb
