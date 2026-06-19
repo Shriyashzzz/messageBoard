@@ -2,6 +2,8 @@ import { Client } from "pg";
 import process from "node:process";
 const now = `${new Date().toDateString()} ${new Date().toLocaleTimeString()}`;
 
+//initialize database for the dirst time, using npm sciprt
+
 const SQL = `
     CREATE TABLE IF NOT EXISTS messages (
         id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,

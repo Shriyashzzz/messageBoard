@@ -10,26 +10,10 @@ A simple messaging web app built with **Node.js**, **Express**, and **EJS**. Use
 - **Framework** — Express
 - **Templating** — EJS
 - **Styling** — Vanilla CSS.
+- **Databse** — PostgreSql.
+- **Hosting** — Railway.
 
 ---
-
-## Project Structure
-
-```
-├── public/
-│   ├── index.css           # Main feed page styles
-│   ├── message.css         # Message partial styles
-│   └── message-detail.css  # Message detail page styles
-├── routes/
-│   ├── homeRoute.js        # GET / — message feed
-│   ├── newMessageRouter.js # POST /new — create message
-│   └── detailsRoute.js     # POST /message/:messageId — detail view
-├── views/
-│   ├── index.ejs           # Feed page
-│   ├── message.ejs         # Message partial (included in feed)
-│   └── message-detail.ejs  # Full message detail page
-└── app.js                  # Express entry point
-```
 
 ---
 
@@ -41,16 +25,26 @@ A simple messaging web app built with **Node.js**, **Express**, and **EJS**. Use
 npm install
 ```
 
-**2. Start the server**
+**2. Insitialize Database**
+
+- **Make sure to initialize a Postgres databse" **
+
+```bash
+npm run initdb
+```
+
+**3. Start the server**
 
 ```bash
 node app.js
 ```
 
-**3. Open in your browser**
+**4. Open in your browser**
 
 ```
-http://localhost:8080
+http://localhost:PORT
+
+-Port Variable can be customized in your .env file, default is 8080
 ```
 
 ---
@@ -72,15 +66,5 @@ http://localhost:8080
 - **Detail page** — shows the full message with username and date
 
 ---
-
-## Stylesheets
-
-All CSS files live in `public/` and are served statically by Express. Each page links to its own stylesheet:
-
-| File                 | Used by                       |
-| -------------------- | ----------------------------- |
-| `index.css`          | `views/index.ejs`             |
-| `message.css`        | `views/message.ejs` (partial) |
-| `message-detail.css` | `views/message-detail.ejs`    |
 
 **Made with <3 while going through the NodeJs section of The Odin Project**
